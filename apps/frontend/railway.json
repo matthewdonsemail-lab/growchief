@@ -1,6 +1,7 @@
 {
   "build": {
     "builder": "nixpacks",
-    "buildCommand": "npm run build"
+    "buildCommand": "npm install -g pnpm@10.7.0 && pnpm install --frozen-lockfile && pnpm --filter ./apps/frontend run build"
   }
 }
+
