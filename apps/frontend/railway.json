@@ -1,6 +1,7 @@
 {
   "build": {
     "builder": "nixpacks",
-    "buildCommand": "cd ../.. && npm install -g pnpm@10.7.0 && pnpm install --frozen-lockfile && pnpm run build:frontend"
-  }
+    "buildCommand": "npm install -g pnpm@10.7.0 && npx pnpm install --frozen-lockfile && npx pnpm run build"
+  },
+  "$schema": "https://railway.app/railway.schema.json"
 }
