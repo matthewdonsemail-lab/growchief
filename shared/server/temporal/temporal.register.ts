@@ -15,6 +15,12 @@ export class TemporalRegister implements OnModuleInit {
     const connection = this._client?.getClient()?.getRawClient()
       ?.connection as Connection;
 
+    // Skip if Temporal client is not initialized
+    if (!connection || !connection.operatorService) {
+      console.warn('[TemporalRegister] Temporal connection not available, skipping search attributes setup');
+      return;
+    }
+
     const { customAttributes } =
       await connection.operatorService.listSearchAttributes({
         namespace: process.env.TEMPORAL_NAMESPACE || 'default',
