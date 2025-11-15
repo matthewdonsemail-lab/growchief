@@ -2,7 +2,8 @@
   "build": {
     "builder": "nixpacks",
     "buildCommand": "npm install -g pnpm@10.7.0 corepack && corepack enable && pnpm install --frozen-lockfile && pnpm --filter ./apps/frontend run build"
-  }
+  },
+  "start": "npx http-server dist -p ${PORT:-3000}"
 }
 
 
