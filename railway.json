@@ -1,6 +1,6 @@
 {
   "build": {
     "builder": "nixpacks",
-    "buildCommand": "NODE_OPTIONS=--max_old_space_size=4096 pnpm install --frozen-lockfile && NODE_OPTIONS=--max_old_space_size=4096 pnpm run build:backend"
+    "buildCommand": "SKIP_ENV_VALIDATION=true NODE_OPTIONS=--max_old_space_size=4096 pnpm install --frozen-lockfile --no-scripts && NODE_OPTIONS=--max_old_space_size=4096 pnpm dlx prisma generate --schema ./schema.prisma && NODE_OPTIONS=--max_old_space_size=4096 pnpm run build:backend"
   }
 }
